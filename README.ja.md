@@ -1,4 +1,4 @@
-# discord-rpc
+# @nich87/discord-rpc
 
 軽量で完全に型付けされたNode.js用Discord RPCクライアント
 
@@ -73,32 +73,32 @@ const client = new Client({
 
 #### メソッド
 
-| メソッド                                | 説明                                                  |
-| --------------------------------------- | ----------------------------------------------------- |
+| メソッド                                | 説明                                                       |
+| --------------------------------------- | ---------------------------------------------------------- |
 | `login(options)`                        | Discordに接続してハンドシェイクを実行。`ReadyData`を返す。 |
-| `destroy()`                             | グレースフルに切断（最初にアクティビティをクリア）。     |
-| `setActivity(activity)`                 | リッチプレゼンスを設定。                               |
-| `clearActivity()`                       | 現在のアクティビティをクリア。                         |
-| `authorize(options)`                    | OAuth2認証をリクエスト。                               |
-| `authenticate(token)`                   | アクセストークンで認証。                               |
-| `exchangeCode(options)`                 | 認証コードをアクセストークンに交換（HTTP）。            |
-| `subscribe(event, args?)`               | RPCイベントを購読。`{ unsubscribe }`を返す。           |
-| `request(cmd, args?, evt?)`             | 生のコマンドを送信。                                   |
-| `getAvatarUrl(userId, hash?, options?)` | CDNアバターURLを生成。                                 |
-| `getRelationships()`                    | ユーザーのフレンドリストを取得（認証が必要）。          |
-| `ping()`                                | キープアライブPingを送信。                             |
+| `destroy()`                             | グレースフルに切断（最初にアクティビティをクリア）。       |
+| `setActivity(activity)`                 | リッチプレゼンスを設定。                                   |
+| `clearActivity()`                       | 現在のアクティビティをクリア。                             |
+| `authorize(options)`                    | OAuth2認証をリクエスト。                                   |
+| `authenticate(token)`                   | アクセストークンで認証。                                   |
+| `exchangeCode(options)`                 | 認証コードをアクセストークンに交換（HTTP）。               |
+| `subscribe(event, args?)`               | RPCイベントを購読。`{ unsubscribe }`を返す。               |
+| `request(cmd, args?, evt?)`             | 生のコマンドを送信。                                       |
+| `getAvatarUrl(userId, hash?, options?)` | CDNアバターURLを生成。                                     |
+| `getRelationships()`                    | ユーザーのフレンドリストを取得（認証が必要）。             |
+| `ping()`                                | キープアライブPingを送信。                                 |
 
 #### ロビーメソッド
 
-| メソッド                                        | 説明                    |
-| ----------------------------------------------- | ----------------------- |
-| `createLobby(type, capacity, metadata?)`        | 新しいロビーを作成。     |
-| `updateLobby(lobbyId, options?)`                | ロビー設定を更新。       |
-| `deleteLobby(lobbyId)`                          | ロビーを削除。           |
-| `connectToLobby(lobbyId, secret)`               | ロビーに接続。           |
-| `disconnectFromLobby(lobbyId)`                  | ロビーから切断。         |
-| `sendToLobby(lobbyId, data)`                    | ロビーにデータを送信。   |
-| `updateLobbyMember(lobbyId, userId, metadata?)` | ロビーメンバーを更新。   |
+| メソッド                                        | 説明                   |
+| ----------------------------------------------- | ---------------------- |
+| `createLobby(type, capacity, metadata?)`        | 新しいロビーを作成。   |
+| `updateLobby(lobbyId, options?)`                | ロビー設定を更新。     |
+| `deleteLobby(lobbyId)`                          | ロビーを削除。         |
+| `connectToLobby(lobbyId, secret)`               | ロビーに接続。         |
+| `disconnectFromLobby(lobbyId)`                  | ロビーから切断。       |
+| `sendToLobby(lobbyId, data)`                    | ロビーにデータを送信。 |
+| `updateLobbyMember(lobbyId, userId, metadata?)` | ロビーメンバーを更新。 |
 
 #### イベント
 
@@ -125,10 +125,10 @@ client.on('rpcEvent', (event, data) => {
 
 #### プロパティ
 
-| プロパティ        | 型                | 説明                                                                        |
-| ----------------- | ----------------- | --------------------------------------------------------------------------- |
-| `connectionState` | `ConnectionState` | 現在の状態: `'disconnected' \| 'connecting' \| 'connected' \| 'ready'`      |
-| `isReady`         | `boolean`         | クライアントがコマンドを送信できるかどうか                                   |
+| プロパティ        | 型                | 説明                                                                   |
+| ----------------- | ----------------- | ---------------------------------------------------------------------- |
+| `connectionState` | `ConnectionState` | 現在の状態: `'disconnected' \| 'connecting' \| 'connected' \| 'ready'` |
+| `isReady`         | `boolean`         | クライアントがコマンドを送信できるかどうか                             |
 
 ### `PresenceBuilder`
 
@@ -152,13 +152,13 @@ const presence = new PresenceBuilder()
 
 ### エラークラス
 
-| クラス            | 説明                                                  |
-| ----------------- | ----------------------------------------------------- |
-| `RPCError`        | 基本エラークラス                                       |
-| `ConnectionError` | IPC接続失敗                                            |
-| `CommandError`    | Discordコマンドエラー（`.code`を含む）                 |
-| `TimeoutError`    | 操作タイムアウト                                       |
-| `StateError`      | 無効な状態（例: `login()`前にメソッドを呼び出す）      |
+| クラス            | 説明                                              |
+| ----------------- | ------------------------------------------------- |
+| `RPCError`        | 基本エラークラス                                  |
+| `ConnectionError` | IPC接続失敗                                       |
+| `CommandError`    | Discordコマンドエラー（`.code`を含む）            |
+| `TimeoutError`    | 操作タイムアウト                                  |
+| `StateError`      | 無効な状態（例: `login()`前にメソッドを呼び出す） |
 
 ### 定数
 
